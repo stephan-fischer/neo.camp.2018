@@ -1,45 +1,55 @@
 <div class="new-credit">
+    <h1>Request a new credit</h1>
 
     <mat-form-field>
         <input matInput placeholder="Amount" type="number" class="example-right-align">
-        <span matPrefix>
+
+        <span matSuffix>
             <svg xmlns="http://www.w3.org/2000/svg"  width="20" height="20" viewBox="0 0 1692.31 2000"><defs><linearGradient id="a" x1="191.59" y1="1712.04" x2="1419.34" y2="662.26" gradientUnits="userSpaceOnUse"><stop stop-color="#beea2e"/><stop offset="1" stop-color="#52ba00"/></linearGradient></defs><path d="M153.85 380.09l669.68 316.74V2000l-669.68-316.74V380.09zM1167.42 0L186 348.94l663.68 318.74 978.38-350.94zm-18.1 596.29v797.38l696.83 271.49V345.89z" transform="translate(-153.85)" fill="url(#a)"/></svg>
+            NEO
+            
         </span>
-        <span matSuffix>NEO</span>
     </mat-form-field>
 
-    <mat-form-field hintLabel="Max 10 characters">
-        <input matInput #input maxlength="10" placeholder="Your Reason">
-        <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+    <mat-form-field hintLabel="Max 30 characters">
+        <input matInput #input maxlength="30" placeholder="Your Reason">
+        <mat-hint align="end">{{input.value?.length || 0}}/30</mat-hint>
     </mat-form-field>
 
     <mat-form-field>
-        <input matInput   [min]="minDate"  [matDatepicker]="picker" [matDatepicker]="picker" placeholder="Refund date">
+        <input matInput   [min]="minDate"  [matDatepicker]="picker" [matDatepicker]="picker" placeholder="Refund Date">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker touchUi #picker></mat-datepicker>
     </mat-form-field>
 
-   
-    <mat-slider
+    <div class="input-wrapper">
+        <mat-slider
 
-        max="20"
-        min="1"
-        step="1"
-        thumbLabel="false"
-        (input)="onInputChange($event)"
-        [(ngModel)]="sliderVal"
-    >
-    </mat-slider>
-    {{sliderVal}} %
+            max="20"
+            min="1"
+            step="1"
+            thumbLabel="false"
+            (input)="onInputChange($event)"
+            [(ngModel)]="sliderVal"
+        >
+        </mat-slider>
+        <label>Interest Rate: {{sliderVal}} %</label>
+    </div>
 
-    <mat-slider
+    <div class="input-wrapper">
+        <mat-slider
 
-        max="24"
-        min="6"
-        step="6"
-        thumbLabel="false"
-        [(ngModel)]="monthVal"
-    >
-    </mat-slider>
-    {{monthVal}} Monate
+            max="24"
+            min="6"
+            step="6"
+            thumbLabel="false"
+            [(ngModel)]="monthVal"
+        >
+        </mat-slider>
+        <label>Term: {{monthVal}} {{monthVal == 1 ? 'Month': 'Months'}}</label>
+
+    </div>
+    <div class="action-wrapper">
+        <button mat-raised-button color="primary">Get credit</button>
+    </div>
 </div>
