@@ -8,21 +8,20 @@ import { Component, OnInit } from '@angular/core';
 export class TestComponent implements OnInit {
 
   minDate = new Date();
-  sliderVal = 1;
+  percentVal = 1;
   monthVal = 6;
-  
-  constructor() {
- 
-   }
 
-   onInputChange(event: any) {
-    this.sliderVal = event.value;
+  constructor() {}
+
+   onPercentChange(event: any) {
+    this.percentVal = event.value;
+  }
+
+  onMonthChange(event: any) {
+    this.monthVal = event.value;
   }
 
 
-  ngOnInit() {
-
-    
-  }
+  ngOnInit() {}
 
 }

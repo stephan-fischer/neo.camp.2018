@@ -32,6 +32,18 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent);
 }
 
 
-.mat-form-field-appearance-legacy .mat-form-field-underline  {
+.mat-form-field-appearance-legacy .mat-form-field-underline,
+ .mat-slider-track-background,
+ .mat-slider:hover .mat-slider-track-background,
+ .mat-slider:focus .mat-slider-track-background {
     background-color: map-deep-get($md-mcgpalette0, 'contrast' , 'A400');
+}
+
+.mat-slider:hover .mat-slider-min-value:not(.mat-slider-thumb-label-showing) .mat-slider-thumb,
+.mat-slider-min-value:not(.mat-slider-thumb-label-showing) .mat-slider-thumb {
+    border-color: map-deep-get($md-mcgpalette0, 'contrast' , 'A400') !important;
+}
+
+.mat-form-field-infix {
+    border-top: 0px;
 }
