@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,21 +18,25 @@ import {
     MatDatepickerModule,
     MAT_DATE_LOCALE,
     MatNativeDateModule,
-    MatSliderModule
+    MatSliderModule,
+    MatCardModule
 } from '@angular/material';
+import { ListComponent } from './components/list/list.component';
 
 
 @NgModule({
     declarations: [
         AppComponent,
         TestComponent,
-        NeonServiceTestComponent
+        NeonServiceTestComponent,
+        ListComponent
     ],
     imports: [
         FormsModule,
         BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
+        HttpClientModule,
         MatButtonModule,
         MatCheckboxModule,
         MatFormFieldModule,
@@ -40,7 +45,8 @@ import {
         MatInputModule,
         MatDatepickerModule,
         MatNativeDateModule,
-        MatSliderModule
+        MatSliderModule,
+        MatCardModule
     ],
     providers: [
         {provide: MAT_DATE_LOCALE, useValue: 'en-GB'},
