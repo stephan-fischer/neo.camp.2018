@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
-import Neon, { api, wallet } from '@cityofzion/neon-js';
+import Neon, {wallet, api} from '@cityofzion/neon-js';
 
 @Injectable({
   providedIn: 'root'
@@ -11,9 +11,10 @@ export class NeoService {
   }
 
   public executeSmartContract() {
+  
     const config = {
       // net: new api.neoscan.instance('TestNet'),
-      net:new  api.neoscan.instance('TestNet'),
+      net: new  api.neoscan.instance('TestNet'),
       script: Neon.create.script({
         scriptHash: '5b7074e873973a6ed3708862f219a6fbf4d1c411',
         operation: 'balanceOf',
@@ -23,6 +24,10 @@ export class NeoService {
       gas: 1
     } as any;
 
-    return Neon.doInvoke(config);
+    const invoke = Neon.doInvoke(config);
+    
+
+    return invoke;
+
   }
 }

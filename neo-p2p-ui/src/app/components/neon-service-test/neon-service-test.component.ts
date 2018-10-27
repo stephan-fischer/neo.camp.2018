@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NeoService } from '../services/neo.service';
+import { NeoService } from '../../services/neo.service';
 
 @Component({
   selector: 'app-neon-service-test',
@@ -18,10 +18,11 @@ export class NeonServiceTestComponent implements OnInit {
   }
 
   invokeNeo() {
-    this.neoService.executeSmartContract().then(res => {
-      this.response = res;
-    });
-
+    this.neoService.executeSmartContract();
+    
+    /*.then(res => {
+        this.response = res;
+    });*/
   }
 
 }
