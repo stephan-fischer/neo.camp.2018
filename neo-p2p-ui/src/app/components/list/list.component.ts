@@ -17,14 +17,14 @@ export class ListComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    let userImagesUrl = 'https://randomuser.me/api/?results=25';
+    const userImagesUrl = 'https://randomuser.me/api/?results=25';
     this.http.get(userImagesUrl)
       .subscribe((res) => {
-        let results = ((res as any).results as any[]);
+        const results = ((res as any).results as any[]);
         this.users = results.map(u => {
-          let descLength = this.descriptions.length;
-          let descRandom = Math.floor((Math.random() * descLength) + 1);
-          let desc = this.descriptions[descRandom - 1];
+          const descLength = this.descriptions.length;
+          const descRandom = Math.floor((Math.random() * descLength) + 1);
+          const desc = this.descriptions[descRandom - 1];
           return {
             name: `${u.name.first} ${u.name.last}`,
             city: `${u.location.city}`,
