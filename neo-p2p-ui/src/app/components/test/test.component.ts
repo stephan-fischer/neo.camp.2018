@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestComponent implements OnInit {
 
-  constructor() { }
+  minDate = new Date();
+  sliderVal = 1;
+  monthVal = 6;
+  
+  constructor() {
+ 
+   }
+
+   onInputChange(event: any) {
+    this.sliderVal = event.value;
+  }
+
 
   ngOnInit() {
+
+    
   }
 
 }
