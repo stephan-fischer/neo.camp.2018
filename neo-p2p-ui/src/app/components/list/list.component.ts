@@ -11,7 +11,8 @@ export class ListComponent implements OnInit {
   private descriptions = [
     `I want a new bike. Please fund me.`,
     'Gimme money for a new porsche.'
-  ]
+  ];
+
   public users = [];
 
   constructor(private http: HttpClient) { }
